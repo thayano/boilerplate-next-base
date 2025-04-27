@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boilerplate Básico Next.js
 
-## Getting Started
+Este é um boilerplate básico para iniciar projetos Next.js com algumas ferramentas e configurações essenciais já inclusas. Ele visa fornecer uma base sólida para desenvolvimento rápido e organizado.
 
-First, run the development server:
+## O que está incluído?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este boilerplate já vem configurado com as seguintes dependências e ferramentas de desenvolvimento:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Dependências:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js (versão 15.3.1)**
+- **React (versão 19.0.0)**
+- **Tailwind (versão 4)**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Ferramentas de Desenvolvimento:**
 
-## Learn More
+- **TypeScript (versão 5.8.3)**
+- **ESLint (versão 9):** Um linter para identificar e corrigir problemas de estilo e erros no seu código JavaScript/TypeScript.
+    - **@typescript-eslint/eslint-plugin (versão 8.31.0) e @typescript-eslint/parser (versão 8.31.0):** Suporte do ESLint para TypeScript.
+    - **eslint-plugin-next (versão 0.0.0):** Regras adicionais específicas para Next.js no ESLint.
+    - **eslint-plugin-tailwindcss (versão 3.18.0):** Plugin do ESLint para garantir boas práticas com Tailwind CSS.
+- **Prettier (versão 3.5.3):** Um formatador de código para manter um estilo consistente em todo o projeto.
+    - **prettier-plugin-tailwindcss (versão 0.6.11):** Plugin do Prettier para ordenar as classes Tailwind CSS automaticamente.
+- **Tailwind CSS (versão 4):** Um framework CSS utilitário para prototipagem e desenvolvimento rápido.
+    - **@tailwindcss/postcss (versão 4):** Plugin PostCSS para integrar o Tailwind CSS.
+    - **tw-animate-css (versão 1.2.8):** Uma coleção de animações prontas para usar com Tailwind CSS.
+- **Husky (versão 9.1.7):** Permite usar Git hooks facilmente.
+- **lint-staged (versão 15.5.1):** Executa linters em arquivos staged (antes do commit).
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts NPM
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Os seguintes scripts estão configurados no `package.json` para facilitar o desenvolvimento:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `dev`: Inicia o servidor de desenvolvimento do Next.js com o Turbopack para builds mais rápidos.
+- `build`: Executa as verificações do Prettier e, em seguida, builda a aplicação Next.js para produção.
+- `start`: Inicia o servidor Next.js em modo de produção.
+- `format`: Formata todos os arquivos do projeto usando o Prettier.
+- `lint`: Executa o ESLint para verificar problemas de linting no código.
+- `check`: Executa apenas a verificação do Prettier para ver se algum arquivo precisa ser formatado.
+- `build:local`: Formata os arquivos com Prettier e depois builda a aplicação (útil para builds locais de produção).
+- `prepare`: Configura o Husky para os Git hooks.
 
-## Deploy on Vercel
+## Como usar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Clonar o repositório:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ```bash
+    git clone [https://docs.github.com/articles/referencing-and-citing-content](https://docs.github.com/articles/referencing-and-citing-content)
+    cd boilerplate-next-base
+    ```
+
+2.  **Instalar as dependências:**
+
+    ```bash
+    npm install
+    # ou
+    yarn install
+    # ou
+    pnpm install
+    ```
+
+3.  **Iniciar o servidor de desenvolvimento:**
+
+    ```bash
+    npm run dev
+    # ou
+    yarn dev
+    # ou
+    pnpm dev
+    ```
+
+    Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver a aplicação em execução.
+
+4.  **Buildar a aplicação para produção:**
+
+    ```bash
+    npm run build
+    # ou
+    yarn build
+    # ou
+    pnpm build
+    ```
+
+5.  **Iniciar a aplicação em modo de produção:**
+    ```bash
+    npm run start
+    # ou
+    yarn start
+    # ou
+    pnpm start
+    ```
+
+## Configurações Adicionais
+
+- **Tailwind CSS:** A configuração do Tailwind CSS pode ser encontrada no arquivo `tailwind.config.ts` e os estilos globais em `styles/globals.css`.
+- **ESLint:** As regras do ESLint estão configuradas no arquivo `.eslintrc.js`.
+- **Prettier:** As opções de formatação do Prettier estão no arquivo `.prettierrc.js`.
+- **Git Hooks (Husky e lint-staged):** O Husky está configurado para executar o Prettier em arquivos staged antes do commit, garantindo a consistência do código. As configurações do `lint-staged` estão no arquivo `.lintstagedrc.js`.
